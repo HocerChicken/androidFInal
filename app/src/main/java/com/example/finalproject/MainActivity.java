@@ -1,60 +1,51 @@
 package com.example.finalproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.view.Menu;
+import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    EditText edtUsername;
-    EditText edtPassword;
-    Button btnLogin;
-    Button btnRegister;
-
+    private BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.home);
 
-        edtUsername = findViewById(R.id.edtUsername);
-        edtPassword = findViewById(R.id.edtPassword);
-        btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnRegister);
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String username = edtUsername.getText().toString();
-                String password = edtPassword.getText().toString();
-
-                if(username.equals("")){
-                    Toast.makeText(MainActivity.this, "Vui lòng nhập Username.", Toast.LENGTH_SHORT).show();
-                }else if(password.equals("")){
-                    Toast.makeText(MainActivity.this, "Vui lòng nhập Password.", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    if(password.length() < 6){
-                        Toast.makeText(MainActivity.this, "Mật khẩu phải lớn hơn 6 ký tự.", Toast.LENGTH_SHORT).show();
-                    } else if (username.equals("admin") && password.equals("123456")) {
-                        Toast.makeText(MainActivity.this, "Đăng nhập thành công.", Toast.LENGTH_SHORT).show();
-                    }else {
-                        Toast.makeText(MainActivity.this, "Username hoặc Password không chính xác.", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-        });
-
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Register.class);
-
-                startActivityForResult(intent, 12345);
-            }
-        });
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new HomeFragment()).commit();
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+
+                    switch (item.getItemId()) {
+                        case R.id.home:
+                            selectedFragment = new HomeFragment();
+                            break;
+                        case R.id.cart:
+                            selectedFragment = new CartFragment();
+                            break;
+                        case R.id.profile:
+                            selectedFragment = new ProfileFragment();
+                            break;
+                    }
+
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            selectedFragment).commit();
+
+                    return true;
+                }
+            };
 }
