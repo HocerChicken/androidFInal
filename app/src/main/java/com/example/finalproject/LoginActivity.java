@@ -39,9 +39,8 @@ public class LoginActivity extends AppCompatActivity {
                 else{
                     if(password.length() < 6){
                         Toast.makeText(LoginActivity.this, "Mật khẩu phải lớn hơn 6 ký tự.", Toast.LENGTH_SHORT).show();
-                    } else if (username.equals("admin") && password.equals("123456")) {
+                    } else if (username.equals("user") && password.equals("123456")) {
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công.", Toast.LENGTH_SHORT).show();
-
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                     }else {

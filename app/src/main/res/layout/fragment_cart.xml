@@ -20,7 +20,7 @@
             android:padding="16dp"
             android:text="GIỎ HÀNG"
             android:textColor="#007BFF"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <ListView
@@ -34,7 +34,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="10dp"
-            android:background="#E8E8E8"
+            android:background="#B2E8E8E8"
             android:paddingBottom="10dp"
             android:layout_marginBottom="56dp"
             android:layout_weight="0"
@@ -56,7 +56,7 @@
                     android:textStyle="bold"
                     android:text="Tổng tiền:"
                     android:textColor="#000000"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textView4"
@@ -64,9 +64,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
                     android:layout_marginLeft="5dp"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="0 vnđ" />
+                    android:text="0" />
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text="vnđ" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -74,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:textColor="@color/white"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="5dp"

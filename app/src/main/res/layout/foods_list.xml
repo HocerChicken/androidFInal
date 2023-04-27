@@ -39,7 +39,7 @@
                     android:layout_marginBottom="5dp"
                     android:text="Tên món ăn"
                     android:textColor="@color/black"
-                    android:textSize="17sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -56,6 +56,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_weight="0"
                     android:text="Giá:"
+                    android:textSize="18sp"
                     android:textColor="@color/black" />
 
                 <TextView
@@ -65,7 +66,7 @@
                     android:layout_weight="1"
                     android:layout_marginRight="5dp"
                     android:text="0"
-
+                    android:textSize="18sp"
                     android:textColor="@color/black" />
                 <TextView
                     android:id="@+id/tv"
@@ -73,7 +74,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="vnđ"
-
+                    android:textSize="18sp"
                     android:textColor="@color/black" />
             </LinearLayout>
         </LinearLayout>
