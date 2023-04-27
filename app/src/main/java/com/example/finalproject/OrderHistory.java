@@ -11,9 +11,10 @@ public class OrderHistory {
     private String userFullName;
     private String phoneNumber;
     private String address;
+    private String status;
 
     public OrderHistory(int orderCode, double totalAmount, ArrayList<Food> foodList,
-                        Date orderDate, String userFullName, String phoneNumber, String address) {
+                        Date orderDate, String userFullName, String phoneNumber, String address, String status) {
         this.orderCode = orderCode;
         this.totalAmount = totalAmount;
         this.foodList = foodList;
@@ -21,6 +22,7 @@ public class OrderHistory {
         this.userFullName = userFullName;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.status = status;
     }
 
     public int getOrderCode() {
@@ -77,5 +79,13 @@ public class OrderHistory {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.address = status;
     }
 }

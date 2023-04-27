@@ -8,22 +8,25 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.finalproject.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderDetailActivity extends AppCompatActivity {
+public class OrderDetailAdminActivity extends AppCompatActivity {
 
     Button btnStatus;
     Button btnExit;
-    ListView lvOrderHistory;
+    ListView lvOrderHistoryAdmin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.order_detail);
+        setContentView(R.layout.order_detail_admin);
 
         btnStatus = findViewById(R.id.btnStatus);
         btnExit = findViewById(R.id.btnExit);
-        lvOrderHistory = findViewById(R.id.lvOrderHistory);
+        lvOrderHistoryAdmin = findViewById(R.id.lvOrderHistoryAdmin);
+
 
         // Lấy dữ liệu từ Intent (nếu có)
         Intent intent = getIntent();
@@ -35,12 +38,11 @@ public class OrderDetailActivity extends AppCompatActivity {
         List<Food> foodList = new ArrayList<>();
         // Thêm các món ăn vào danh sách
         foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
-        foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,1));
-        foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,2));
 
         // Tạo adapter cho lvOrderHistory
         FoodListInOrderDetailAdapter adapter = new FoodListInOrderDetailAdapter(this, foodList);
-        lvOrderHistory.setAdapter(adapter);
+        lvOrderHistoryAdmin.setAdapter(adapter);
+
 
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override

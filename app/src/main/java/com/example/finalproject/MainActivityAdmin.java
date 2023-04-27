@@ -46,14 +46,14 @@ public class MainActivityAdmin extends AppCompatActivity {
                     new AlertDialog.Builder(MainActivityAdmin.this)
                             .setTitle("Đăng xuất")
                             .setMessage("Bạn có chắc chắn muốn đăng xuất?")
-                            .setPositiveButton(android.R.string.yes, (dialog, which) -> {
+                            .setPositiveButton("có", (dialog, which) -> {
                                 // Đăng xuất và quay trở về trang đăng nhập
                                 Intent intent = new Intent(MainActivityAdmin.this, LoginActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                                 finish();
                             })
-                            .setNegativeButton(android.R.string.no, null)
+                            .setNegativeButton("không", null)
                             .show();
                     return true;
             }

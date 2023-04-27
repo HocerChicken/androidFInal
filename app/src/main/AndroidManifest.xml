@@ -25,6 +25,7 @@
             android:name=".MainActivityAdmin">
         </activity>
         <activity android:name=".OrderDetailActivity" />
+        <activity android:name=".OrderDetailAdminActivity" />
 
         <activity
             android:name=".LoginActivity"

@@ -212,7 +212,7 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:id="@+id/lvOrderHistory"
+        android:id="@+id/lvOrderHistoryAdmin"
         android:layout_weight="1"
         android:layout_height="match_parent" >
 
@@ -250,7 +250,7 @@
             android:layout_marginBottom="10dp"
             android:layout_gravity="center"
             android:background="@drawable/button_primary"
-            android:text="ĐÃ NHẬN HÀNG"
+            android:text="ĐÃ GIAO HÀNG"
             android:textColor="@color/white"
             android:textSize="18sp" />
     </LinearLayout>

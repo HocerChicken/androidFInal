@@ -40,7 +40,7 @@ public class OrderHistoryAdapter extends ArrayAdapter<OrderHistory> {
 
         // Hiển thị dữ liệu
         tvOrderID.setText(String.valueOf(orderHistory.getOrderCode()));
-        tvStatus.setText("chưa nhận hàng");
+        tvStatus.setText(String.valueOf(orderHistory.getStatus()));
 
         // Bắt sự kiện khi nhấn nút btnOrderInfo
         btnOrderInfo.setOnClickListener(new View.OnClickListener() {
