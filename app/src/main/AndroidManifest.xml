@@ -27,6 +27,7 @@
         <activity android:name=".UserActivity.OrderDetailActivity" />
         <activity android:name=".AdminActivity.OrderDetailAdminActivity" />
         <activity android:name=".UserActivity.EditProfileActivity" />
+        <activity android:name=".AdminActivity.EditFoodActivity" />
 
         <activity
             android:name=".LoginActivity"

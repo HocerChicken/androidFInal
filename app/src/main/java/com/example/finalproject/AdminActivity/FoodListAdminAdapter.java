@@ -2,10 +2,13 @@ package com.example.finalproject.AdminActivity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,52 +17,51 @@ import com.example.finalproject.R;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FoodListAdminAdapter extends ArrayAdapter<Food> {
     private Context context;
-    private int resource;
-    private ArrayList<Food> foodList;
+    private List<Food> foodList;
 
-    public FoodListAdminAdapter(Context context, int resource, ArrayList<Food> foodList) {
-        super(context, resource, foodList);
+    public FoodListAdminAdapter(Context context, List<Food> foodList) {
+        super(context, R.layout.foods_list_admin, foodList);
         this.context = context;
-        this.resource = resource;
         this.foodList = foodList;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = convertView;
-        ViewHolder holder;
-
-        if (view == null) {
-            LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-            view = inflater.inflate(resource, parent, false);
-
-            holder = new ViewHolder();
-            holder.ivFood = view.findViewById(R.id.ivFood);
-            holder.tvFoodName = view.findViewById(R.id.tvFoodName);
-            holder.tvFoodPrice = view.findViewById(R.id.tvFoodPrice);
-
-            view.setTag(holder);
-        } else {
-            holder = (ViewHolder) view.getTag();
-        }
+        LayoutInflater inflater = LayoutInflater.from(context);
+        convertView = inflater.inflate(R.layout.foods_list_admin, parent, false);
 
         Food food = foodList.get(position);
 
-        holder.ivFood.setImageResource(food.getImage());
-        holder.tvFoodName.setText(food.getName());
+        // Ánh xạ dữ liệu vào các View trong item layout
+        ImageView ivFoodImage = convertView.findViewById(R.id.ivFood);
+        TextView tvFoodName = convertView.findViewById(R.id.tvFoodName);
+        TextView tvFoodPrice = convertView.findViewById(R.id.tvFoodPrice);
+        ImageButton btnUpdateFood = convertView.findViewById(R.id.btnUpdateFood);
+        ImageButton btnDeleteFood = convertView.findViewById(R.id.btnDeleteFood);
 
         NumberFormat formatter = NumberFormat.getInstance();
         String formattedPrice = formatter.format(food.getPrice());
-        holder.tvFoodPrice.setText(formattedPrice);
-        return view;
-    }
+        tvFoodPrice.setText(formattedPrice);
 
-    static class ViewHolder {
-        ImageView ivFood;
-        TextView tvFoodName;
-        TextView tvFoodPrice;
+        ivFoodImage.setImageResource(food.getImage());
+        tvFoodName.setText(food.getName());
+
+        btnUpdateFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Chuyển đến trang EditFoodActivity
+                Intent intent = new Intent(getContext(), EditFoodActivity.class);
+
+                getContext().startActivity(intent);
+            }
+        });
+
+        return convertView;
+
+
     }
 }

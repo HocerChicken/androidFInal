@@ -29,7 +29,7 @@ public class HomeAdminFragment extends Fragment {
         foodList.add(new Food("Món 4", R.drawable.com_tam, 180000));
 
         // Khởi tạo FoodAdapter
-        foodAdapter = new FoodListAdminAdapter(getContext(), R.layout.foods_list_admin, foodList);
+        foodAdapter = new FoodListAdminAdapter(getContext(), foodList);
 
         // Gán FoodAdapter cho ListView
         lvFoodAdmin.setAdapter(foodAdapter);
