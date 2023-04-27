@@ -46,11 +46,22 @@ public class ProfileFragment extends Fragment {
 
         btnOrderHistory = view.findViewById(R.id.btnOderHistory);
 
+        btnEditProfile = view.findViewById(R.id.btnEditProfile);
+
         btnOrderHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), OrderHistoryActivity.class);
                 startActivityForResult(intent, REQUEST_CODE_ORDER_HISTORY);
+            }
+        });
+
+        btnEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Chuyển đến màn hình chỉnh sửa thông tin cá nhân
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -78,7 +89,6 @@ public class ProfileFragment extends Fragment {
                 dialog.show();
             }
         });
-
         // Trả về View của Fragment
         return view;
     }

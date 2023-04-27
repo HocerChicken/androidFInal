@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_container"
     android:layout_width="match_parent"
-    android:background="@drawable/background5"
+    android:background="@drawable/background4"
     android:scaleType="centerCrop"
     android:layout_height="match_parent">
 

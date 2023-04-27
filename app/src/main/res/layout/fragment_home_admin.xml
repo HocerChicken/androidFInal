@@ -84,7 +84,7 @@
                     android:textSize="18sp" />
             </LinearLayout>
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnExit"
+                android:id="@+id/btnAdd"
                 android:layout_width="150dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"

@@ -80,7 +80,7 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/btnEditFood"
+            android:id="@+id/btnUpdateFood"
             android:layout_width="wrap_content"
             android:padding="0px"
             android:layout_height="wrap_content"
