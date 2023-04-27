@@ -1,6 +1,7 @@
 package com.example.finalproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,25 @@ public class OrderHistoryAdapter extends ArrayAdapter<OrderHistory> {
         tvOrderID.setText(String.valueOf(orderHistory.getOrderCode()));
         tvStatus.setText("chưa nhận hàng");
 
+        // Bắt sự kiện khi nhấn nút btnOrderInfo
+        btnOrderInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Chuyển đến trang OrderDetailActivity
+                Intent intent = new Intent(context, OrderDetailActivity.class);
+                // Truyền dữ liệu cần thiết cho trang chi tiết đơn hàng
+                intent.putExtra("orderCode", orderHistory.getOrderCode());
+                intent.putExtra("totalAmount", orderHistory.getTotalAmount());
+                intent.putExtra("foodList", orderHistory.getFoodList());
+                intent.putExtra("orderDate", orderHistory.getOrderDate().toString());
+                intent.putExtra("userFullName", orderHistory.getUserFullName());
+                intent.putExtra("phoneNumber", orderHistory.getPhoneNumber());
+                intent.putExtra("address", orderHistory.getAddress());
+                context.startActivity(intent);
+            }
+        });
+
         return convertView;
     }
+
 }
