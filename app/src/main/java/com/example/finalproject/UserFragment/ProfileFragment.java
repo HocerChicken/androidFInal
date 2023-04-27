@@ -1,7 +1,9 @@
-package com.example.finalproject;
+package com.example.finalproject.UserFragment;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +15,10 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.finalproject.LoginActivity;
+import com.example.finalproject.OrderHistoryActivity;
+import com.example.finalproject.R;
 
 
 public class ProfileFragment extends Fragment {
@@ -39,14 +45,6 @@ public class ProfileFragment extends Fragment {
         // Ánh xạ các View trong fragment_profile.xml
         btnLogout = view.findViewById(R.id.btnLogout);
 
-        // Xử lý sự kiện khi nhấn nút đăng xuất
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showConfirmLogoutDialog();
-            }
-        });
-
         btnOrderHistory = view.findViewById(R.id.btnOderHistory);
 
         btnOrderHistory.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +55,32 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        // Xử lý sự kiện khi nhấn nút đăng xuất
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Tạo dialog xác nhận
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setMessage("Bạn có chắc chắn muốn đăng xuất?");
+                builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Thực hiện đăng xuất và chuyển sang trang đăng nhập
+                        Intent intent = new Intent(getActivity(), LoginActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+                });
+                builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Không thực hiện đăng xuất
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+
+        // Trả về View của Fragment
         return view;
     }
 
@@ -67,24 +91,6 @@ public class ProfileFragment extends Fragment {
         if (requestCode == REQUEST_CODE_ORDER_HISTORY && resultCode == RESULT_OK) {
             // Thực hiện các hành động để quay trở lại trang FragmentProfile trước đó
         }
-    }
-
-    private void showConfirmLogoutDialog() {
-        ConfirmLogoutDialogFragment dialogFragment = new ConfirmLogoutDialogFragment(new ConfirmLogoutDialogFragment.ConfirmLogoutDialogListener() {
-            @Override
-            public void onConfirmLogout() {
-                // Thực hiện đăng xuất
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
-                getActivity().finish();
-            }
-
-            @Override
-            public void onCancelLogout() {
-                // Không thực hiện đăng xuất
-            }
-        });
-        dialogFragment.show(getChildFragmentManager(), "confirm_logout_dialog");
     }
 
 }

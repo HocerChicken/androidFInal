@@ -1,13 +1,15 @@
 package com.example.finalproject;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.finalproject.UserFragment.CartFragment;
+import com.example.finalproject.UserFragment.HomeFragment;
+import com.example.finalproject.UserFragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

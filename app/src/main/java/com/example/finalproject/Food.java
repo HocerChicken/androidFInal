@@ -13,6 +13,12 @@ public class Food {
         this.quantity = quantity;
     }
 
+    public Food(String name, int image, double price) {
+        this.name = name;
+        this.image = image;
+        this.price = price;
+    }
+
     public String getName() {
         return name;
     }

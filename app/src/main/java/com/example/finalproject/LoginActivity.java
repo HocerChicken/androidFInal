@@ -43,6 +43,10 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
+                    }else if (username.equals("admin") && password.equals("123456")) {
+                        Toast.makeText(LoginActivity.this, "Đăng nhập admin thành công.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, MainActivityAdmin.class);
+                        startActivity(intent);
                     }else {
                         Toast.makeText(LoginActivity.this, "Username hoặc Password không chính xác.", Toast.LENGTH_SHORT).show();
                     }
