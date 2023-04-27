@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.UserActivity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,14 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
+import com.example.finalproject.OrderHistory;
+import com.example.finalproject.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class OrderHistoryAdapter extends ArrayAdapter<OrderHistory> {
     private Context context;

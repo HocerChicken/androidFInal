@@ -1,4 +1,4 @@
-package com.example.finalproject.AdminFragment;
+package com.example.finalproject.AdminActivity;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.finalproject.OrderHistory;
-import com.example.finalproject.OrderHistoryAdminAdapter;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;

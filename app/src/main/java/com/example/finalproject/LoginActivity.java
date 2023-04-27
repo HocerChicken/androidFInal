@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.finalproject.AdminActivity.MainActivityAdmin;
+import com.example.finalproject.UserActivity.MainActivity;
+
 public class LoginActivity extends AppCompatActivity {
     EditText edtUsername;
     EditText edtPassword;

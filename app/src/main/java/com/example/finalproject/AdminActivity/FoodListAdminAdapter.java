@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.AdminActivity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.finalproject.Food;
+import com.example.finalproject.R;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;

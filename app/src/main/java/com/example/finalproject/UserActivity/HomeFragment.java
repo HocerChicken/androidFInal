@@ -1,4 +1,4 @@
-package com.example.finalproject.UserFragment;
+package com.example.finalproject.UserActivity;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.finalproject.Food;
-import com.example.finalproject.FoodListAdapter;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;

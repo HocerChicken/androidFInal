@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.AdminActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.finalproject.Food;
+import com.example.finalproject.FoodListInOrderDetailAdapter;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;

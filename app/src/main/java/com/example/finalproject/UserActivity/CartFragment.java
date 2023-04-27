@@ -1,4 +1,4 @@
-package com.example.finalproject.UserFragment;
+package com.example.finalproject.UserActivity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,6 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import com.example.finalproject.Food;
-import com.example.finalproject.FoodListInCartAdapter;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;

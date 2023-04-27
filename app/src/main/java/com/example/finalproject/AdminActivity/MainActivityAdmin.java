@@ -1,18 +1,17 @@
-package com.example.finalproject;
+package com.example.finalproject.AdminActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.finalproject.AdminFragment.HomeAdminFragment;
-import com.example.finalproject.AdminFragment.OrderListAdminFragment;
+import com.example.finalproject.LoginActivity;
+import com.example.finalproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivityAdmin extends AppCompatActivity {

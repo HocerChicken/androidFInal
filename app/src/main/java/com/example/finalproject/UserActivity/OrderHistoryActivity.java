@@ -1,13 +1,14 @@
-package com.example.finalproject;
+package com.example.finalproject.UserActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.example.finalproject.OrderHistory;
+import com.example.finalproject.R;
 
 import java.util.ArrayList;
 import java.util.Date;

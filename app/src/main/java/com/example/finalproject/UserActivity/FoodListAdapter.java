@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.UserActivity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,15 +10,18 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.finalproject.Food;
+import com.example.finalproject.R;
+
 import java.text.NumberFormat;
 import java.util.List;
 
-public class FoodListInCartAdapter extends ArrayAdapter<Food> {
+public class FoodListAdapter extends ArrayAdapter<Food> {
     private Context context;
     private List<Food> foodList;
 
-    public FoodListInCartAdapter(Context context, List<Food> foodList) {
-        super(context, R.layout.foods_list_in_cart, foodList);
+    public FoodListAdapter(Context context, List<Food> foodList) {
+        super(context, R.layout.foods_list, foodList);
         this.context = context;
         this.foodList = foodList;
     }
@@ -26,7 +29,7 @@ public class FoodListInCartAdapter extends ArrayAdapter<Food> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        convertView = inflater.inflate(R.layout.foods_list_in_cart, parent, false);
+        convertView = inflater.inflate(R.layout.foods_list, parent, false);
 
         // Lấy dữ liệu của một item trong danh sách
         Food food = getItem(position);
@@ -38,8 +41,7 @@ public class FoodListInCartAdapter extends ArrayAdapter<Food> {
         Button btnDecrease = convertView.findViewById(R.id.btnDecrease);
         TextView tvQuantity = convertView.findViewById(R.id.tvQuantity);
         Button btnIncrease = convertView.findViewById(R.id.btnIncrease);
-        ImageButton btnDeleteFromCart = convertView.findViewById(R.id.btnDeleteFromCart);
-
+        ImageButton btnAddToCart = convertView.findViewById(R.id.btnAddToCart);
 
         NumberFormat formatter = NumberFormat.getInstance();
         String formattedPrice = formatter.format(food.getPrice());

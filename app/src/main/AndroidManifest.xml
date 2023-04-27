@@ -12,20 +12,20 @@
         android:theme="@style/Theme.FinalProject"
         tools:targetApi="31">
         <activity
-            android:name=".OrderHistoryActivity"
+            android:name=".UserActivity.OrderHistoryActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".UserActivity.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivityAdmin">
+            android:name=".AdminActivity.MainActivityAdmin">
         </activity>
-        <activity android:name=".OrderDetailActivity" />
-        <activity android:name=".OrderDetailAdminActivity" />
+        <activity android:name=".UserActivity.OrderDetailActivity" />
+        <activity android:name=".AdminActivity.OrderDetailAdminActivity" />
 
         <activity
             android:name=".LoginActivity"

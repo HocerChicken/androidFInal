@@ -1,4 +1,4 @@
-package com.example.finalproject.UserFragment;
+package com.example.finalproject.UserActivity;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -17,7 +17,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.finalproject.LoginActivity;
-import com.example.finalproject.OrderHistoryActivity;
 import com.example.finalproject.R;
 
 
