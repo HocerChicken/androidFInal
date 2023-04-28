@@ -39,6 +39,10 @@ public class HomeFragment extends Fragment {
         foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,0));
         foodList.add(new Food("Mì Xào", R.drawable.com_tam, 25000,0));
         foodList.add(new Food("Bún Thịt Nướng", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Bún Thịt Nướng", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Mì Xào", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Bún Thịt Nướng", R.drawable.com_tam, 25000,0));
 
         // Thiết lập Adapter
         adapter = new FoodListAdapter(getActivity(), foodList);

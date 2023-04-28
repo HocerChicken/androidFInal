@@ -214,6 +214,7 @@
         android:layout_width="match_parent"
         android:id="@+id/lvOrderHistory"
         android:layout_weight="1"
+        android:layout_marginBottom="20dp"
         android:layout_height="match_parent" >
 
     </ListView>
@@ -233,7 +234,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/button_orange"
             android:text="Thoát"
             android:textColor="@color/white"
@@ -247,7 +248,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:layout_gravity="center"
             android:background="@drawable/button_primary"
             android:text="ĐÃ NHẬN HÀNG"

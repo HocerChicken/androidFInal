@@ -27,7 +27,10 @@ public class HomeAdminFragment extends Fragment {
         foodList.add(new Food("Món 2", R.drawable.com_tam, 200000));
         foodList.add(new Food("Món 3", R.drawable.com_tam, 150000));
         foodList.add(new Food("Món 4", R.drawable.com_tam, 180000));
-
+        foodList.add(new Food("Món 3", R.drawable.com_tam, 150000));
+        foodList.add(new Food("Món 4", R.drawable.com_tam, 180000));
+        foodList.add(new Food("Món 3", R.drawable.com_tam, 150000));
+        foodList.add(new Food("Món 4", R.drawable.com_tam, 180000));
         // Khởi tạo FoodAdapter
         foodAdapter = new FoodListAdminAdapter(getContext(), foodList);
 

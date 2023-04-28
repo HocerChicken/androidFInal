@@ -41,6 +41,15 @@ public class OrderDetailActivity extends AppCompatActivity {
         foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
         foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,1));
         foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,2));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,1));
+        foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,2));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,1));
+        foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,2));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,1));
+        foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,2));
 
         // Tạo adapter cho lvOrderHistory
         FoodListInOrderDetailAdapter adapter = new FoodListInOrderDetailAdapter(this, foodList);

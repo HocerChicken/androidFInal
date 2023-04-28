@@ -37,6 +37,18 @@ public class OrderListAdminFragment extends Fragment {
         orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
         orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
         orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
 
         return orderHistoryList;
     }

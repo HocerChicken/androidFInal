@@ -35,6 +35,18 @@ public class CartFragment extends Fragment {
         foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,0));
         foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,0));
         foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,0));
+        foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,0));
 
         // Thiết lập Adapter
         adapter = new FoodListInCartAdapter(getActivity(), foodList);

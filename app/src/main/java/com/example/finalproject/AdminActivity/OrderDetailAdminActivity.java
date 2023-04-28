@@ -40,6 +40,14 @@ public class OrderDetailAdminActivity extends AppCompatActivity {
         List<Food> foodList = new ArrayList<>();
         // Thêm các món ăn vào danh sách
         foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
+        foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,3));
 
         // Tạo adapter cho lvOrderHistory
         FoodListInOrderDetailAdapter adapter = new FoodListInOrderDetailAdapter(this, foodList);

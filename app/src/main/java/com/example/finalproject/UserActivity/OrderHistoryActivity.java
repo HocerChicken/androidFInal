@@ -29,6 +29,16 @@ public class OrderHistoryActivity extends AppCompatActivity {
         orderHistoryList = new ArrayList<>();
         orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St", "chưa nhận hàng"));
         orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã nhận hàng"));
 
         // Tạo adapter và thiết lập cho ListView
         adapter = new OrderHistoryAdapter(this, orderHistoryList);
