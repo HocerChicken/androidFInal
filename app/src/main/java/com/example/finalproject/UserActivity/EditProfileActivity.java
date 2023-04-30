@@ -11,7 +11,6 @@ import com.example.finalproject.R;
 
 public class EditProfileActivity extends AppCompatActivity {
 
-    EditText edtUsername;
     EditText edtFullName;
     EditText edtPhone;
     EditText etdEmail;
@@ -24,7 +23,6 @@ public class EditProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_profile);
 
-        edtUsername = findViewById(R.id.edtUsername);
         edtFullName = findViewById(R.id.edtFullName);
         edtPhone = findViewById(R.id.edtPhone);
         edtFullName = findViewById(R.id.edtFullName);

@@ -36,19 +36,43 @@
                 android:textColor="#007BFF"
                 android:textSize="25sp"
                 android:textStyle="bold" />
-
             <EditText
-                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawableLeft="@drawable/baseline_email_24"
                 android:layout_marginTop="20dp"
-                android:id="@+id/edtUsername"
+                android:drawablePadding="10dp"
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:textSize="18sp"
+                android:backgroundTint="#007BFF"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+            <EditText
+                android:drawableLeft="@drawable/baseline_lock_24"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="10dp"
+                android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:backgroundTint="#007BFF"
                 android:ems="10"
+                android:hint="Mật khẩu"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:drawableLeft="@drawable/baseline_lock_24"
+                android:layout_marginTop="20dp"
                 android:drawablePadding="10dp"
-                android:inputType="textPersonName"
-                android:hint="Tên đăng nhập" />
+                android:id="@+id/edtConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primary"
+                android:ems="10"
+                android:textSize="18sp"
+                android:hint="Xác nhận lại mật khẩu"
+                android:inputType="textPassword" />
 
             <EditText
                 android:drawableLeft="@drawable/baseline_person_24"
@@ -77,19 +101,6 @@
                 android:inputType="phone" />
 
             <EditText
-                android:drawableLeft="@drawable/baseline_email_24"
-                android:layout_marginTop="20dp"
-                android:drawablePadding="10dp"
-                android:id="@+id/edtEmail"
-                android:layout_width="match_parent"
-                android:textSize="18sp"
-                android:backgroundTint="#007BFF"
-                android:layout_height="wrap_content"
-                android:hint="Email"
-                android:ems="10"
-                android:inputType="textEmailAddress" />
-
-            <EditText
                 android:id="@+id/edtAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -101,32 +112,6 @@
                 android:drawablePadding="10dp"
                 android:hint="Địa chỉ"
                 android:inputType="textPersonName"/>
-
-            <EditText
-                android:drawableLeft="@drawable/baseline_lock_24"
-                android:layout_marginTop="20dp"
-                android:drawablePadding="10dp"
-                android:id="@+id/edtPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:backgroundTint="#007BFF"
-                android:ems="10"
-                android:hint="Mật khẩu"
-                android:inputType="textPassword" />
-
-            <EditText
-                android:drawableLeft="@drawable/baseline_lock_24"
-                android:layout_marginTop="20dp"
-                android:drawablePadding="10dp"
-                android:id="@+id/edtConfirmPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/primary"
-                android:ems="10"
-                android:textSize="18sp"
-                android:hint="Xác nhận lại mật khẩu"
-                android:inputType="textPassword" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
