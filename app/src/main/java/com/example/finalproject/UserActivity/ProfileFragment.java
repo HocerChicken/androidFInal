@@ -3,9 +3,9 @@ package com.example.finalproject.UserActivity;
 import static android.app.Activity.RESULT_OK;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -23,10 +24,16 @@ import com.example.finalproject.LoginActivity;
 import com.example.finalproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class ProfileFragment extends Fragment {
     public static final int REQUEST_CODE_ORDER_HISTORY = 1;
+    public static final int REQUEST_CODE_UPDATE_PROFILE = 2;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -40,6 +47,7 @@ public class ProfileFragment extends Fragment {
     TextView tvAddress;
     Button btnOrderHistory;
     Button btnLogout;
+    private ProgressDialog progressDialog;
     private View mView;
 
     @Override
@@ -47,7 +55,6 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mView = inflater.inflate(R.layout.fragment_profile, container, false);
-
         // Ánh xạ các View trong fragment_profile.xml
         initUi();
         showUserInformation();
@@ -56,14 +63,17 @@ public class ProfileFragment extends Fragment {
         return mView;
     }
 
-
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == REQUEST_CODE_ORDER_HISTORY && resultCode == RESULT_OK) {
             // Thực hiện các hành động để quay trở lại trang FragmentProfile trước đó
+            // Reload your fragment here
+
+        }
+        if(requestCode == REQUEST_CODE_UPDATE_PROFILE && resultCode == RESULT_OK){
+            showUserInformation();
         }
     }
 
@@ -76,6 +86,7 @@ public class ProfileFragment extends Fragment {
         btnLogout = mView.findViewById(R.id.btnLogout);
         btnOrderHistory = mView.findViewById(R.id.btnOderHistory);
         btnEditProfile = mView.findViewById(R.id.btnEditProfile);
+        progressDialog = new ProgressDialog(getActivity());
     }
 
     private void initListener(){
@@ -91,8 +102,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Chuyển đến màn hình chỉnh sửa thông tin cá nhân
-                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
-                startActivity(intent);
+                onclickEditProfile();
             }
         });
 
@@ -103,6 +113,11 @@ public class ProfileFragment extends Fragment {
               onClickLogout();
             }
         });
+    }
+
+    private void onclickEditProfile() {
+        Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+        startActivityForResult(intent, REQUEST_CODE_UPDATE_PROFILE);
     }
 
     private void onClickLogout() {
@@ -128,26 +143,56 @@ public class ProfileFragment extends Fragment {
     }
 
     public void showUserInformation(){
+        progressDialog.show();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String name = user.getDisplayName();
-        String email = user.getEmail();
-        String phone = user.getPhoneNumber();
-        Uri photoUri = user.getPhotoUrl();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myUserRef = database.getReference("list_users/"+user.getUid());
 
-        if(name == null){
-            tvUserFullName.setVisibility(View.GONE);
-        } else {
-            tvUserFullName.setVisibility(View.VISIBLE);
-            tvUserFullName.setText(name);
-        }
-        if(phone == null){
-            tvPhone.setVisibility(View.GONE);
-        } else {
-            tvPhone.setVisibility(View.VISIBLE);
-            tvPhone.setText(name);
-        }
+        myUserRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String idUser = snapshot.getKey();
+                String name = snapshot.child("userFullName").getValue(String.class);
+                String phone = snapshot.child("phoneNumber").getValue(String.class);
+                String email = snapshot.child("email").getValue(String.class);
+                String address = snapshot.child("address").getValue(String.class);
+                String photoUri = String.valueOf(user.getPhotoUrl());
 
-        tvEmail.setText(email);
-        Glide.with(this).load(photoUri).error(R.drawable.default_user_avatar).into(imgAvatar);
+                if(name == null){
+                    tvUserFullName.setVisibility(View.GONE);
+                } else {
+                    tvUserFullName.setVisibility(View.VISIBLE);
+                    tvUserFullName.setText(name);
+                }
+
+                if(phone == null){
+                    tvPhone.setVisibility(View.GONE);
+                } else {
+                    tvPhone.setVisibility(View.VISIBLE);
+                    tvPhone.setText(phone);
+                }
+
+                if(email == null){
+                    tvEmail.setVisibility(View.GONE);
+                } else {
+                    tvEmail.setVisibility(View.VISIBLE);
+                    tvEmail.setText(email);
+                }
+
+                if(address == null){
+                    tvAddress.setVisibility(View.GONE);
+                } else {
+                    tvAddress.setVisibility(View.VISIBLE);
+                    tvAddress.setText(address);
+                }
+                Glide.with(getActivity()).load(photoUri).error(R.drawable.default_user_avatar).into(imgAvatar);
+                progressDialog.dismiss();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 }

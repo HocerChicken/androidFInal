@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -34,18 +36,16 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
-
         initUI();
         initListener();
     }
     private void initUI(){
-        edtFullName = findViewById(R.id.edtFullName);
-        edtPhone = findViewById(R.id.edtPhone);
-        edtFullName = findViewById(R.id.edtFullName);
         edtEmail = findViewById(R.id.edtEmail);
-        edtAddress = findViewById(R.id.edtAddress);
         edtPassword = findViewById(R.id.edtPassword);
         edtConfirmPassword = findViewById(R.id.edtConfirmPassword);
+        edtFullName = findViewById(R.id.edtFullName);
+        edtPhone = findViewById(R.id.edtPhone);
+        edtAddress = findViewById(R.id.edtAddress);
         btnRegister = findViewById(R.id.btnRegister);
         progressDialog = new ProgressDialog(this);
     }
@@ -113,6 +113,11 @@ public class RegisterActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
+                                User user = new User(mAuth.getUid(), email, password, fullname, phoneNumber, address);
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference myRef = database.getReference("list_users");
+                                String pathObject = String.valueOf(user.getId());
+                                myRef.child(pathObject).setValue(user);
                                 Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finishAffinity();

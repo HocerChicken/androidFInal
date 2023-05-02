@@ -1,30 +1,33 @@
 package com.example.finalproject;
 
 public class User {
-    private String userName;
+    private String id;
+    private String email;
     private String userFullName;
     private String phoneNumber;
-    private String email;
     private String address;
     private String password;
 
-    public User(String userName, String userFullName, String phoneNumber, String email, String address, String password) {
-        this.userName = userName;
+    public User(){}
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public User(String id, String email,  String password, String userFullName, String phoneNumber,  String address) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
         this.userFullName = userFullName;
         this.phoneNumber = phoneNumber;
-        this.email = email;
         this.address = address;
-        this.password = password;
     }
 
     // Getters và setters cho các thuộc tính
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getUserFullName() {
         return userFullName;

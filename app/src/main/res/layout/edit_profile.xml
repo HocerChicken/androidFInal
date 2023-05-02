@@ -70,7 +70,8 @@
             android:layout_height="wrap_content"
             android:hint="Email"
             android:ems="10"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:enabled="false"/>
 
         <EditText
             android:id="@+id/edtAddress"

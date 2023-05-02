@@ -40,7 +40,7 @@
                 android:textSize="20sp"
                 android:layout_marginRight="10dp"
                 android:textStyle="bold"
-                android:text="Pham Van Quoc Vinh" />
+                android:text="username" />
 
             <ImageButton
                 android:id="@+id/btnEditProfile"
@@ -53,17 +53,18 @@
         </LinearLayout>
 
         <TextView
-            android:drawableLeft="@drawable/baseline_local_phone_24"
-            android:layout_marginTop="20dp"
-            android:drawablePadding="10dp"
             android:id="@+id/tvPhone"
             android:textSize="18sp"
             android:layout_width="match_parent"
             android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:ems="10"
+
             android:backgroundTint="#007BFF"
-            android:text="Số điện thoại" />
+            android:ems="10"
+            android:drawableLeft="@drawable/baseline_local_phone_24"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
+            android:text="phone" />
 
         <TextView
             android:drawableLeft="@drawable/baseline_email_24"
@@ -90,7 +91,7 @@
             android:drawableLeft="@drawable/baseline_location_on_24"
             android:layout_marginTop="20dp"
             android:drawablePadding="10dp"
-            android:text="Địa chỉ"/>
+            android:text="Address"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnOderHistory"

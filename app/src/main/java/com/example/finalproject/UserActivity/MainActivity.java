@@ -1,6 +1,5 @@
 package com.example.finalproject.UserActivity;
 
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -51,15 +50,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-            openGallery();
-        }
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+//            openGallery();
+//        }
+//    }
 
-    public void openGallery() {
-
-    }
+//    public void openGallery() {
+//
+//    }
 }

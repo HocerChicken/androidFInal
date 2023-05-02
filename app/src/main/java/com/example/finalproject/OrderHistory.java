@@ -13,6 +13,8 @@ public class OrderHistory {
     private String address;
     private String status;
 
+    public OrderHistory(){}
+
     public OrderHistory(int orderCode, double totalAmount, ArrayList<Food> foodList,
                         Date orderDate, String userFullName, String phoneNumber, String address, String status) {
         this.orderCode = orderCode;
