@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.finalproject.OrderHistory;
+import com.example.finalproject.Model.OrderHistory;
 import com.example.finalproject.R;
 
 import java.util.List;

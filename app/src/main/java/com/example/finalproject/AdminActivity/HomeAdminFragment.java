@@ -9,7 +9,7 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.finalproject.Food;
+import com.example.finalproject.Model.Food;
 import com.example.finalproject.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

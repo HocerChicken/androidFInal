@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.Model;
 
 import java.util.ArrayList;
 import java.util.Date;

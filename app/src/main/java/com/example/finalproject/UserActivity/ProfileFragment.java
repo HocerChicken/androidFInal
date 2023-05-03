@@ -22,7 +22,7 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.example.finalproject.LoginActivity;
 import com.example.finalproject.R;
-import com.example.finalproject.User;
+import com.example.finalproject.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

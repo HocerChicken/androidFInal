@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.finalproject.OrderHistory;
+import com.example.finalproject.Model.OrderHistory;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;

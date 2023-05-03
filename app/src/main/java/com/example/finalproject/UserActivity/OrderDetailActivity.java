@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.finalproject.Food;
+import com.example.finalproject.Model.Food;
 import com.example.finalproject.FoodListInOrderDetailAdapter;
 import com.example.finalproject.R;
 

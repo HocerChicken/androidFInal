@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.example.finalproject.OrderHistory;
+import com.example.finalproject.Model.OrderHistory;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;

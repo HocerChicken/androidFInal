@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.finalproject.Food;
+import com.example.finalproject.Model.Food;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;
