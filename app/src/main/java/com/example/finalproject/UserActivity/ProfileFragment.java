@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.example.finalproject.LoginActivity;
 import com.example.finalproject.R;
+import com.example.finalproject.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -148,15 +149,15 @@ public class ProfileFragment extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myUserRef = database.getReference("list_users/"+user.getUid());
 
-        myUserRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        myUserRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String idUser = snapshot.getKey();
-                String name = snapshot.child("userFullName").getValue(String.class);
-                String phone = snapshot.child("phoneNumber").getValue(String.class);
-                String email = snapshot.child("email").getValue(String.class);
-                String address = snapshot.child("address").getValue(String.class);
-                String photoUri = String.valueOf(user.getPhotoUrl());
+                User user = snapshot.getValue(User.class);
+                String name = user.getUserFullName();
+                String phone = user.getPhoneNumber();
+                String email = user.getEmail();
+                String address = user.getAddress();
+                String photoUri = null;
 
                 if(name == null){
                     tvUserFullName.setVisibility(View.GONE);
@@ -185,8 +186,8 @@ public class ProfileFragment extends Fragment {
                     tvAddress.setVisibility(View.VISIBLE);
                     tvAddress.setText(address);
                 }
-                Glide.with(getActivity()).load(photoUri).error(R.drawable.default_user_avatar).into(imgAvatar);
                 progressDialog.dismiss();
+                Glide.with(getActivity()).load(photoUri).error(R.drawable.default_user_avatar).into(imgAvatar);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

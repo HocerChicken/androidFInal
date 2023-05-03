@@ -50,7 +50,7 @@ public class FoodListAdapter extends ArrayAdapter<Food> {
         ivFoodImage.setImageResource(food.getImage());
         tvFoodName.setText(food.getName());
 //        tvFoodPrice.setText(String.valueOf(food.getPrice()));
-        tvQuantity.setText(String.valueOf(food.getQuantity()));
+            tvQuantity.setText(String.valueOf(food.getQuantity()));
 
         // Trả về View đã ánh xạ dữ liệu
         return convertView;

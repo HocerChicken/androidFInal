@@ -31,7 +31,7 @@ public class HomeFragment extends Fragment {
         listView = view.findViewById(R.id.lvFood);
         foodList = new ArrayList<>();
 
-        // Thêm dữ liệu vào danh sách
+        // lấy dữ liệu vào danh sách
         foodList.add(new Food("Cơm Tấm", R.drawable.com_tam, 25000,0));
         foodList.add(new Food("Cơm Gà", R.drawable.com_tam, 25000,0));
         foodList.add(new Food("Bún Bò", R.drawable.com_tam, 25000,0));
@@ -48,7 +48,6 @@ public class HomeFragment extends Fragment {
         // Thiết lập Adapter
         adapter = new FoodListAdapter(getActivity(), foodList);
         listView.setAdapter(adapter);
-
         return view;
     }
 

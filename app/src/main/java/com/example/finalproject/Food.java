@@ -6,6 +6,8 @@ public class Food {
     private double price;
     private int quantity;
 
+    public  Food(){}
+
     public Food(String name, int image, double price, int quantity) {
         this.name = name;
         this.image = image;
