@@ -15,7 +15,7 @@ public class Food {
         this.quantity = quantity;
     }
 
-    public Food(String name, int image, double price) {
+    public Food(String name, double price,  int image) {
         this.name = name;
         this.image = image;
         this.price = price;

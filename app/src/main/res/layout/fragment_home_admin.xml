@@ -59,20 +59,7 @@
                 android:layout_marginTop="0dp"
                 android:orientation="horizontal">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnLogin"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/white"
-                    android:background="@drawable/button_primary"
-                    android:text="Chọn ảnh" />
-
                 <EditText
-                    android:layout_marginLeft="10dp"
                     android:id="@+id/edtFoodPicturePath"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
