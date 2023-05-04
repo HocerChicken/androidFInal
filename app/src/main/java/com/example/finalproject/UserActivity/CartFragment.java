@@ -35,6 +35,7 @@ public class CartFragment extends Fragment {
     public static int total;
     public static List<Food> cart = new ArrayList<>();
     public static TextView tvTotal;
+    public static List<OrderHistory> list_orders= new ArrayList<>();
 
     public CartFragment() {
         // Required empty public constructor
@@ -57,60 +58,55 @@ public class CartFragment extends Fragment {
         // Thiết lập Adapter
         adapter = new FoodListInCartAdapter(getActivity(), cart);
         listView.setAdapter(adapter);
+
         btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onClickBook();
             }
         });
+
+
         return view;
     }
 
     private void onClickBook() {
-        List<OrderHistory> list_orders = new ArrayList<>();
-//            public OrderHistory(int orderCode, double totalAmount, ArrayList<Food> foodList,
-//                Date orderDate, String userFullName, String phoneNumber, String address, String status) {
-//            this.orderCode = orderCode;
-//            this.totalAmount = totalAmount;
-//            this.foodList = foodList;
-//            this.orderDate = orderDate;
-//            this.userFullName = userFullName;
-//            this.phoneNumber = phoneNumber;
-//            this.address = address;
-//            this.status = status;
-//        }
+        DatabaseReference usersRef = database.getReference("list_users/" + user.getUid());
+        usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userGet = snapshot.getValue(User.class);
+                Date now = new Date();
+                int orderCode = new Random().nextInt(101);
+                String newKey = usersRef.push().getKey();
+                OrderHistory order = new OrderHistory(orderCode, total, cart, now,
+                        userGet.getUserFullName(), userGet.getPhoneNumber(),
+                        userGet.getAddress(), "Chua nhan hang");
+                Toast.makeText(getContext(), order.toString(), Toast.LENGTH_SHORT).show();
+                DatabaseReference myOrdersRef = database.getReference("list_users/" + user.getUid()+"/orders");
+                myOrdersRef.child(newKey).setValue(order);
+                //create order for admin to manage
+                DatabaseReference ordersRef = database.getReference("orders");
+                ordersRef.child(newKey).setValue(order);
+            }
 
-        DatabaseReference userRef  = database.getReference("list_users/" + user.getUid());
-            userRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    User user = snapshot.getValue(User.class);
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                    OrderHistory order = new OrderHistory(new Random().nextInt(101)
-                                , total, cart, new Date(), user.getUserFullName(), user.getPhoneNumber(), user.getAddress(), "Chua nhan hang");
-                    Toast.makeText(getContext(), order.toString(), Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-
-        //OrderHistory order = new OrderHistory(new Random().nextInt(101), total, cart, );
-
-        //list_orders.add(order);
-
-//        DatabaseReference myRef = database.getReference("list_users/"+user.getUid()+"/carts");
-//        myRef.removeValue();
-//        total = 0;
-//        cart.clear();
+            }
+        });
+        DatabaseReference cartRef = database.getReference("list_users/" + user.getUid() + "/carts");
+        cartRef.removeValue();
+        total = 0;
+        cart.clear();
     }
 
-    private void getListFoodsInCartFromRealtimeDatabase() {
-        DatabaseReference myRef = database.getReference("list_users/"+user.getUid()+"/carts");
 
-        myRef.addValueEventListener(new ValueEventListener() {
+    private void getListFoodsInCartFromRealtimeDatabase() {
+        DatabaseReference foodRef = database.getReference("list_users/" + user.getUid()+"/carts");
+
+
+        foodRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 cart.clear();
@@ -129,6 +125,7 @@ public class CartFragment extends Fragment {
 
             }
         });
+
     }
 
 

@@ -19,10 +19,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.bumptech.glide.Glide;
 import com.example.finalproject.LoginActivity;
-import com.example.finalproject.R;
 import com.example.finalproject.Model.User;
+import com.example.finalproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -157,7 +156,7 @@ public class ProfileFragment extends Fragment {
                 String phone = user.getPhoneNumber();
                 String email = user.getEmail();
                 String address = user.getAddress();
-                String photoUri = null;
+                //String photoUri = "";
 
                 if(name == null){
                     tvUserFullName.setVisibility(View.GONE);
@@ -187,7 +186,7 @@ public class ProfileFragment extends Fragment {
                     tvAddress.setText(address);
                 }
                 progressDialog.dismiss();
-                Glide.with(getActivity()).load(photoUri).error(R.drawable.default_user_avatar).into(imgAvatar);
+                //Glide.with(getActivity()).load(photoUri).error(R.drawable.default_user_avatar).into(imgAvatar);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
