@@ -2,12 +2,11 @@ package com.example.finalproject.Model;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class OrderHistory {
     private int orderCode;
     private int totalAmount;
-    private List<Food> foodList;
+    private ArrayList<Food> foodList;
     private Date orderDate;
     private String userFullName;
     private String phoneNumber;
@@ -18,7 +17,7 @@ public class OrderHistory {
 
     }
 
-    public OrderHistory(int orderCode, int totalAmount, List<Food> foodList,
+    public OrderHistory(int orderCode, int totalAmount, ArrayList<Food> foodList,
                         Date orderDate, String userFullName, String phoneNumber, String address, String status) {
         this.orderCode = orderCode;
         this.totalAmount = totalAmount;
@@ -38,7 +37,7 @@ public class OrderHistory {
         this.orderCode = orderCode;
     }
 
-    public double getTotalAmount() {
+    public int getTotalAmount() {
         return totalAmount;
     }
 
@@ -46,7 +45,7 @@ public class OrderHistory {
         this.totalAmount = totalAmount;
     }
 
-    public List<Food> getFoodList() {
+    public ArrayList<Food> getFoodList() {
         return foodList;
     }
 
@@ -91,7 +90,7 @@ public class OrderHistory {
     }
 
     public void setStatus(String status) {
-        this.address = status;
+        this.status = status;
     }
 
     @Override

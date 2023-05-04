@@ -78,8 +78,8 @@ public class CartFragment extends Fragment {
                 User userGet = snapshot.getValue(User.class);
                 Date now = new Date();
                 int orderCode = new Random().nextInt(101);
-                String newKey = usersRef.push().getKey();
-                OrderHistory order = new OrderHistory(orderCode, total, cart, now,
+                String newKey = String.valueOf(orderCode);
+                OrderHistory order = new OrderHistory(orderCode, total, (ArrayList<Food>) cart, now,
                         userGet.getUserFullName(), userGet.getPhoneNumber(),
                         userGet.getAddress(), "Chua nhan hang");
                 Toast.makeText(getContext(), order.toString(), Toast.LENGTH_SHORT).show();
@@ -88,6 +88,10 @@ public class CartFragment extends Fragment {
                 //create order for admin to manage
                 DatabaseReference ordersRef = database.getReference("orders");
                 ordersRef.child(newKey).setValue(order);
+                DatabaseReference cartRef = database.getReference("list_users/" + user.getUid() + "/carts");
+                cartRef.removeValue();
+                total = 0;
+                cart.clear();
             }
 
             @Override
@@ -95,10 +99,6 @@ public class CartFragment extends Fragment {
 
             }
         });
-        DatabaseReference cartRef = database.getReference("list_users/" + user.getUid() + "/carts");
-        cartRef.removeValue();
-        total = 0;
-        cart.clear();
     }
 
 
