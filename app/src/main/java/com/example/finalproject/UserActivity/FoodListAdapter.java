@@ -1,5 +1,9 @@
 package com.example.finalproject.UserActivity;
 
+import static com.example.finalproject.UserActivity.CartFragment.cart;
+import static com.example.finalproject.UserActivity.MainActivity.database;
+import static com.example.finalproject.UserActivity.MainActivity.user;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +13,17 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.finalproject.Model.Food;
 import com.example.finalproject.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -50,9 +62,63 @@ public class FoodListAdapter extends ArrayAdapter<Food> {
         ivFoodImage.setImageResource(food.getImage());
         tvFoodName.setText(food.getName());
 //        tvFoodPrice.setText(String.valueOf(food.getPrice()));
-            tvQuantity.setText(String.valueOf(food.getQuantity()));
+        tvQuantity.setText(String.valueOf(food.getQuantity()));
+
+        //set listeners
+        btnIncrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int count = Integer.parseInt(tvQuantity.getText().toString().trim());
+                count += 1;
+                food.setQuantity(count);
+                tvQuantity.setText(String.valueOf(food.getQuantity()));
+            }
+        });
+        btnDecrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int count = Integer.parseInt(tvQuantity.getText().toString().trim());
+                count -= 1;
+                if (count < 0) count = 0;
+                food.setQuantity(count);
+                tvQuantity.setText(String.valueOf(food.getQuantity()));
+            }
+        });
+
+        btnAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onclickAddToCart(position);
+            }
+        });
 
         // Trả về View đã ánh xạ dữ liệu
         return convertView;
+    }
+
+    private void onclickAddToCart(int position) {
+        Food food = foodList.get(position);
+        if(food.getQuantity() == 0){
+            return;
+        }
+        cart.add(food);
+        //Toast.makeText(getContext(), food.toString(), Toast.LENGTH_SHORT).show();
+        DatabaseReference myCartsRef = database.getReference("list_users/"+user.getUid()+"/carts");
+        myCartsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                myCartsRef.setValue(cart, new DatabaseReference.CompletionListener() {
+                    @Override
+                    public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+                        Toast.makeText(getContext(), "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

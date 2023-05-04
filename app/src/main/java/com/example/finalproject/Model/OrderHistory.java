@@ -2,20 +2,19 @@ package com.example.finalproject.Model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class OrderHistory {
     private int orderCode;
-    private double totalAmount;
-    private ArrayList<Food> foodList;
+    private int totalAmount;
+    private List<Food> foodList;
     private Date orderDate;
     private String userFullName;
     private String phoneNumber;
     private String address;
     private String status;
 
-    public OrderHistory(){}
-
-    public OrderHistory(int orderCode, double totalAmount, ArrayList<Food> foodList,
+    public OrderHistory(int orderCode, int totalAmount, List<Food> foodList,
                         Date orderDate, String userFullName, String phoneNumber, String address, String status) {
         this.orderCode = orderCode;
         this.totalAmount = totalAmount;
@@ -39,11 +38,11 @@ public class OrderHistory {
         return totalAmount;
     }
 
-    public void setTotalAmount(double totalAmount) {
+    public void setTotalAmount(int totalAmount) {
         this.totalAmount = totalAmount;
     }
 
-    public ArrayList<Food> getFoodList() {
+    public List<Food> getFoodList() {
         return foodList;
     }
 
@@ -89,5 +88,19 @@ public class OrderHistory {
 
     public void setStatus(String status) {
         this.address = status;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderHistory{" +
+                "orderCode=" + orderCode +
+                ", totalAmount=" + totalAmount +
+                ", foodList=" + foodList +
+                ", orderDate=" + orderDate +
+                ", userFullName='" + userFullName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
 }

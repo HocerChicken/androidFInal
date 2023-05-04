@@ -9,8 +9,13 @@ import androidx.fragment.app.Fragment;
 
 import com.example.finalproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
+    public static FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    public static FirebaseDatabase database = FirebaseDatabase.getInstance();
     private BottomNavigationView bottomNavigationView;
     public static final int MY_REQUEST_CODE = 111;
     @Override

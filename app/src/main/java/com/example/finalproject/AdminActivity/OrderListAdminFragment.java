@@ -1,11 +1,12 @@
 package com.example.finalproject.AdminActivity;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.finalproject.Model.OrderHistory;
 import com.example.finalproject.R;
@@ -34,21 +35,21 @@ public class OrderListAdminFragment extends Fragment {
 
         // Thêm các đơn hàng vào danh sách
         // ...
-        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
-        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
-        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
-        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
-        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
-        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
-        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
-        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
-        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
-        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
-        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
-        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
-        orderHistoryList.add(new OrderHistory(1, 50.0, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
-        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
-        orderHistoryList.add(new OrderHistory(2, 30.0, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
+        orderHistoryList.add(new OrderHistory(1, 50, new ArrayList<>(), new Date(), "John Doe", "123456789", "123 Main St","đã nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "chưa nhận hàng"));
+        orderHistoryList.add(new OrderHistory(2, 30, new ArrayList<>(), new Date(), "Jane Doe", "987654321", "456 Elm St", "đã giao hàng"));
 
         return orderHistoryList;
     }
