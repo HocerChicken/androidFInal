@@ -46,7 +46,7 @@ public class HomeAdminFragment extends Fragment {
         edtImg = view.findViewById(R.id.edtFoodPicturePath);
 
         // Tạo danh sách các món ăn mặc định
-        //addListFoodDefault();
+        addListFoodDefault();
 
         // Khởi tạo FoodAdapter
         foodAdapter = new FoodListAdminAdapter(getContext(), foodList, this);
