@@ -6,7 +6,6 @@ public class User {
     private String userFullName;
     private String phoneNumber;
     private String address;
-    private String password;
 
     public User(){}
 
@@ -18,10 +17,9 @@ public class User {
         this.id = id;
     }
 
-    public User(String id, String email,  String password, String userFullName, String phoneNumber,  String address) {
+    public User(String id, String email, String userFullName, String phoneNumber,  String address) {
         this.id = id;
         this.email = email;
-        this.password = password;
         this.userFullName = userFullName;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -59,14 +57,6 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     @Override

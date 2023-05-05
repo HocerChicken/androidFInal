@@ -110,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                                User user = new User(mAuth.getUid(), email, password, fullname, phoneNumber, address);
+                                User user = new User(mAuth.getUid(), email , fullname, phoneNumber, address);
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 DatabaseReference myRef = database.getReference("list_users");
                                 String pathObject = String.valueOf(user.getId());

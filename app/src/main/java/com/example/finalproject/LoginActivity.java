@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,12 +19,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtEmail;
     EditText edtPassword;
     Button btnLogin;
     Button btnRegister;
+    private LinearLayout layoutForgotPassword;
     private ProgressDialog progressDialog;
 
     @Override
@@ -42,7 +45,9 @@ public class LoginActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
+        layoutForgotPassword = findViewById(R.id.layoutForgotpass);
         progressDialog = new ProgressDialog(this);
+
     }
 
     private void initListener() {
@@ -59,6 +64,17 @@ public class LoginActivity extends AppCompatActivity {
                 onclickRegister();
             }
         });
+        layoutForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onclickForgotPassword();
+            }
+        });
+    }
+
+    private void onclickForgotPassword() {
+        Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+        startActivity(intent);
     }
 
     private void onclickRegister() {
@@ -100,6 +116,11 @@ public class LoginActivity extends AppCompatActivity {
                                     progressDialog.dismiss();
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
+                                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                    if(user != null){
+
+                                    }
+                                    user.getUid();
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     finishAffinity();
