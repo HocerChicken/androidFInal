@@ -50,16 +50,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="0"
-                    android:text="Giá:"
-                    android:textSize="16sp"
-                    android:textColor="@color/black" />
-
-                <TextView
                     android:id="@+id/tvFoodPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
