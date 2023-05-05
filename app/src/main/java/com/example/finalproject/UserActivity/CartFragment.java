@@ -15,7 +15,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.finalproject.AdminActivity.OrderDetailAdminActivity;
 import com.example.finalproject.Model.Food;
 import com.example.finalproject.Model.OrderHistory;
 import com.example.finalproject.Model.User;
@@ -25,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -117,7 +117,9 @@ public class CartFragment extends Fragment {
                     total += food.getQuantity() * food.getPrice();
                     cart.add(food);
                 }
-                tvTotal.setText(String.valueOf(total));
+                NumberFormat formatter = NumberFormat.getInstance();
+                String formattedPrice = formatter.format(total);
+                tvTotal.setText(formattedPrice);
                 adapter.notifyDataSetChanged();
             }
 

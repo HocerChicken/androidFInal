@@ -17,6 +17,7 @@ import com.example.finalproject.Model.Food;
 import com.example.finalproject.R;
 import com.google.firebase.database.DatabaseReference;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 public class OrderDetailActivity extends AppCompatActivity {
@@ -49,7 +50,9 @@ public class OrderDetailActivity extends AppCompatActivity {
         int orderCode = intent.getIntExtra("orderCode", 0);
         tvOrderID.setText(String.valueOf(orderCode));
         int totalAmount = intent.getIntExtra("totalAmount", 0);
-        tvOrderTotalAmount.setText(String.valueOf(totalAmount));
+        NumberFormat formatter = NumberFormat.getInstance();
+        String formattedPrice = formatter.format(totalAmount);
+        tvOrderTotalAmount.setText(String.valueOf(formattedPrice) + " VND");
         String orderDate = intent.getStringExtra("orderDate");
         tvOrderDate.setText(orderDate);
         String userFullName = intent.getStringExtra("userFullName");

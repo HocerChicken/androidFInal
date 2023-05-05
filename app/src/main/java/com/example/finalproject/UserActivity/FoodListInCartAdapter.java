@@ -77,7 +77,9 @@ public class FoodListInCartAdapter extends ArrayAdapter<Food> {
                 food.setQuantity(count);
                 tvQuantity.setText(String.valueOf(food.getQuantity()));
                 total += food.getPrice();
-                tvTotal.setText(String.valueOf(total));
+                NumberFormat formatter = NumberFormat.getInstance();
+                String formattedPrice = formatter.format(total);
+                tvTotal.setText(formattedPrice);
             }
         });
         btnDecrease.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +91,9 @@ public class FoodListInCartAdapter extends ArrayAdapter<Food> {
                 food.setQuantity(count);
                 tvQuantity.setText(String.valueOf(food.getQuantity()));
                 total -= food.getPrice();
-                tvTotal.setText(String.valueOf(total));
+                NumberFormat formatter = NumberFormat.getInstance();
+                String formattedPrice = formatter.format(total);
+                tvTotal.setText(formattedPrice);
             }
         });
 
