@@ -38,6 +38,8 @@ public class HomeFragment extends Fragment {
         foodList = new ArrayList<>();
 
         // lấy dữ liệu vào danh sách
+        addListFoodDefault();
+        foodList.clear();
         getListFoodsFromRealtimeDatabase();
 
         // Thiết lập Adapter
@@ -65,5 +67,21 @@ public class HomeFragment extends Fragment {
 
             }
         });
+    }
+
+    private void addListFoodDefault() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("list_foods");
+        foodList.add(new Food("Cơm tấm", 30000, R.drawable.food_com_tam));
+        foodList.add(new Food("Cơm gà", 35000, R.drawable.food_com_ga));
+        foodList.add(new Food("Bún bò", 45000, R.drawable.food_bun_bo));
+        foodList.add(new Food("Phở", 45000, R.drawable.food_pho));
+        foodList.add(new Food("Bánh canh", 45000, R.drawable.food_banh_canh));
+        foodList.add(new Food("Mì xào", 35000, R.drawable.food_mi_xao));
+        foodList.add(new Food("Miếng trộn", 35000, R.drawable.food_mieng_tron));
+        foodList.add(new Food("Cơm chiên", 40000, R.drawable.food_com_chien));
+        foodList.add(new Food("Chả giò", 25000, R.drawable.food_cha_gio));
+        foodList.add(new Food("Khoai tây chiên", 25000, R.drawable.food_khoai_tay_chien));
+        myRef.setValue(foodList);
     }
 }
