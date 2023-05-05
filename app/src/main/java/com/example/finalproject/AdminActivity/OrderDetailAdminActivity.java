@@ -59,12 +59,8 @@ public class OrderDetailAdminActivity extends AppCompatActivity {
         tvOrderPhone.setText(phoneNumber);
         String address = intent.getStringExtra("address");
         tvOderAddress.setText(address);
-        // ...
 
-        // lấy danh sách món ăn (có thể lấy từ Intent hoặc từ nguồn dữ liệu khác)
         List<Food> foodList = (List<Food>) intent.getSerializableExtra("foodList");
-
-        // Thêm các món ăn vào danh sách
 
         // Tạo adapter cho lvOrderHistory
         FoodListInOrderDetailAdapter adapter = new FoodListInOrderDetailAdapter(this, foodList);
@@ -83,8 +79,8 @@ public class OrderDetailAdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DatabaseReference ordersRef = database.getReference("orders");
-                ordersRef.child(String.valueOf(orderCode)).child("status").setValue("Dang giao hang");
-                Toast.makeText(OrderDetailAdminActivity.this, "Dang giao hang", Toast.LENGTH_SHORT).show();
+                ordersRef.child(String.valueOf(orderCode)).child("status").setValue("Đã giao hàng");
+                Toast.makeText(OrderDetailAdminActivity.this, "Đã giao hàng", Toast.LENGTH_SHORT).show();
                 setResult(RESULT_OK);
                 finish();
             }

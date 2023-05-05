@@ -25,6 +25,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    dexOptions {
+        javaMaxHeapSize "6g"
+    }
+
     buildTypes {
         release {
             minifyEnabled false

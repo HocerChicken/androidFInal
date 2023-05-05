@@ -77,17 +77,17 @@ public class LoginActivity extends AppCompatActivity {
         }else {
             if (TextUtils.isEmpty(email) || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 // email is invalid
-                Toast.makeText(LoginActivity.this, "Vui long kiem tra lai email",
+                Toast.makeText(LoginActivity.this, "Vui lòng kiểm tra lại email",
                         Toast.LENGTH_SHORT).show();
             }
             else if(TextUtils.isEmpty(password)){
                 //check null password
-                Toast.makeText(LoginActivity.this, "Vui long nhap mat khau",
+                Toast.makeText(LoginActivity.this, "Vui lòng nhập mật khẩu",
                         Toast.LENGTH_SHORT).show();
             }
             else if(password.length() < 6) {
                 //check length password
-                Toast.makeText(LoginActivity.this, "Mat khau phai lon hon bang 6 ky tu",
+                Toast.makeText(LoginActivity.this, "Mật khẩu phải ít nhất 6 kí tự",
                         Toast.LENGTH_SHORT).show();
             } else {
                 // email, password is valid
@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                                     finishAffinity();
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(LoginActivity.this, "Loi Dang nhap",
+                                    Toast.makeText(LoginActivity.this, "Email hoặc mật khẩu không chính xác",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }

@@ -58,12 +58,8 @@ public class OrderDetailActivity extends AppCompatActivity {
         tvOrderPhone.setText(phoneNumber);
         String address = intent.getStringExtra("address");
         tvOderAddress.setText(address);
-        // ...
-
-        // Tạo danh sách món ăn (có thể lấy từ Intent hoặc từ nguồn dữ liệu khác)
 
         List<Food> foodList = (List<Food>) intent.getSerializableExtra("foodList");
-        // Thêm các món ăn vào danh sách
 
         // Tạo adapter cho lvOrderHistory
         FoodListInOrderDetailAdapter adapter = new FoodListInOrderDetailAdapter(this, foodList);
@@ -82,8 +78,8 @@ public class OrderDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DatabaseReference orderUserRef = database.getReference("list_users/"+ user.getUid()+"/orders");
                 DatabaseReference ordersRef = database.getReference("orders");
-                orderUserRef.child(String.valueOf(orderCode)).child("status").setValue("Da nhan hang");
-                ordersRef.child(String.valueOf(orderCode)).child("status").setValue("Da nhan hang");
+                orderUserRef.child(String.valueOf(orderCode)).child("status").setValue("Đã nhận hàng");
+                ordersRef.child(String.valueOf(orderCode)).child("status").setValue("Đã nhận hàng");
                 setResult(RESULT_OK);
                 finish();
             }

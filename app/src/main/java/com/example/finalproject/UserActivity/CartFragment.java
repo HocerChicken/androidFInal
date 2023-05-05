@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.finalproject.AdminActivity.OrderDetailAdminActivity;
 import com.example.finalproject.Model.Food;
 import com.example.finalproject.Model.OrderHistory;
 import com.example.finalproject.Model.User;
@@ -81,8 +82,8 @@ public class CartFragment extends Fragment {
                 String newKey = String.valueOf(orderCode);
                 OrderHistory order = new OrderHistory(orderCode, total, (ArrayList<Food>) cart, now,
                         userGet.getUserFullName(), userGet.getPhoneNumber(),
-                        userGet.getAddress(), "Chua nhan hang");
-                Toast.makeText(getContext(), order.toString(), Toast.LENGTH_SHORT).show();
+                        userGet.getAddress(), "Chưa nhận hàng");
+                Toast.makeText(getActivity(),"Đặt hàng thành công",Toast.LENGTH_LONG).show();
                 DatabaseReference myOrdersRef = database.getReference("list_users/" + user.getUid()+"/orders");
                 myOrdersRef.child(newKey).setValue(order);
                 //create order for admin to manage

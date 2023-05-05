@@ -37,11 +37,7 @@ public class OrderListAdminFragment extends Fragment {
     }
 
     private List<OrderHistory> getOrderHistoryList() {
-        // Lấy danh sách đơn hàng từ nguồn dữ liệu của bạn
         List<OrderHistory> orderHistoryList = new ArrayList<>();
-
-        // Thêm các đơn hàng vào danh sách
-        // ...
 
         DatabaseReference orderRef = database.getReference("orders");
         orderRef.addValueEventListener(new ValueEventListener() {
@@ -60,8 +56,6 @@ public class OrderListAdminFragment extends Fragment {
 
             }
         });
-
-
         return orderHistoryList;
     }
 }

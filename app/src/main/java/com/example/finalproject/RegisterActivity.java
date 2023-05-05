@@ -56,10 +56,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onclickSignUp();
-//                Intent intentResult = new Intent();
-//
-//                setResult(RESULT_OK);
-//                finish();
             }
         });
     }
@@ -72,36 +68,36 @@ public class RegisterActivity extends AppCompatActivity {
         String address = edtAddress.getText().toString().trim();
         if (TextUtils.isEmpty(email) || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             // email is invalid
-            Toast.makeText(RegisterActivity.this, "Vui long kiem tra lai email",
+            Toast.makeText(RegisterActivity.this, "Vui lòng kiểm tra lại email",
                     Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(password)) {
             // check null password
-            Toast.makeText(RegisterActivity.this, "Mat khau khong duoc de trong",
+            Toast.makeText(RegisterActivity.this, "Mật khẩu không được để trống",
                     Toast.LENGTH_SHORT).show();
         }
         else if (password.length() < 6) {
             // check length password
-            Toast.makeText(RegisterActivity.this, "Mat khau phai lon hon bang 6 ky tu",
+            Toast.makeText(RegisterActivity.this, "Mật khẩu phải tối thiểu 6 kí tự",
                     Toast.LENGTH_SHORT).show();
         }
         else if (!confirmPassword.equals(password)) {
             // check length password
-            Toast.makeText(RegisterActivity.this, "Mat khau xac nhan khong chinh xac",
+            Toast.makeText(RegisterActivity.this, "Mật khẩu xác nhận không khớp",
                     Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(fullname)) {
             // check null password
-            Toast.makeText(RegisterActivity.this, "ho ten khong duoc de trong",
+            Toast.makeText(RegisterActivity.this, "Họ tên không được để trống",
                     Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(phoneNumber)) {
             // check null password
-            Toast.makeText(RegisterActivity.this, "so dien thoai khong duoc de trong",
+            Toast.makeText(RegisterActivity.this, "Số điện thoại không được để trống",
                     Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(address)) {
             // check null password
-            Toast.makeText(RegisterActivity.this, "Dia chi khong duoc de trong",
+            Toast.makeText(RegisterActivity.this, "Địa chỉ không được để trống",
                     Toast.LENGTH_SHORT).show();
         } else {
             // user information is valid
@@ -124,7 +120,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 finishAffinity();
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Toast.makeText(RegisterActivity.this, "Email da ton tai.",
+                                Toast.makeText(RegisterActivity.this, "Email đã tồn tại",
                                         Toast.LENGTH_SHORT).show();
                             }
                         }

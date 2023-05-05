@@ -125,7 +125,7 @@ public class FoodListAdminAdapter extends ArrayAdapter<Food> {
                                         listFoodsRef.child(index2).removeValue(new DatabaseReference.CompletionListener() {
                                             @Override
                                             public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                                                Toast.makeText(getContext(), "Delete successfully", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getContext(), "Xóa món ăn thành công", Toast.LENGTH_SHORT).show();
                                             }
                                         });
                                     }
@@ -144,7 +144,7 @@ public class FoodListAdminAdapter extends ArrayAdapter<Food> {
                         });
                     }
                 })
-                .setNegativeButton("Cancel", null)
+                .setNegativeButton("Không", null)
                 .show();
     }
 }

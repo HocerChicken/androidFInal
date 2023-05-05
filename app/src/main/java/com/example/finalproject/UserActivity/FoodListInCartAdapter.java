@@ -67,7 +67,6 @@ public class FoodListInCartAdapter extends ArrayAdapter<Food> {
 
         ivFoodImage.setImageResource(food.getImage());
         tvFoodName.setText(food.getName());
-//        tvFoodPrice.setText(String.valueOf(food.getPrice()));
         tvQuantity.setText(String.valueOf(food.getQuantity()));
 
         btnIncrease.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +107,7 @@ public class FoodListInCartAdapter extends ArrayAdapter<Food> {
         new AlertDialog.Builder(getContext())
                 .setTitle("VH-RESTAURANT")
                 .setMessage("Bạn có chắc muốn xóa món ăn này?")
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Có", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -138,7 +137,7 @@ public class FoodListInCartAdapter extends ArrayAdapter<Food> {
                                         listFoodsRef.child(index2).removeValue(new DatabaseReference.CompletionListener() {
                                             @Override
                                             public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                                                Toast.makeText(getContext(), "Delete successfully", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getContext(), "Xóa món ăn thành công", Toast.LENGTH_SHORT).show();
                                             }
                                         });
                                     }
@@ -157,7 +156,7 @@ public class FoodListInCartAdapter extends ArrayAdapter<Food> {
                         });
                     }
                 })
-                .setNegativeButton("Cancel", null)
+                .setNegativeButton("Không", null)
                 .show();
     }
 }

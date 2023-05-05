@@ -69,8 +69,6 @@ public class ProfileFragment extends Fragment {
 
         if (requestCode == REQUEST_CODE_ORDER_HISTORY && resultCode == RESULT_OK) {
             // Thực hiện các hành động để quay trở lại trang FragmentProfile trước đó
-            // Reload your fragment here
-
         }
         if(requestCode == REQUEST_CODE_UPDATE_PROFILE && resultCode == RESULT_OK){
             showUserInformation();

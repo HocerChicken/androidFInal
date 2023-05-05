@@ -54,8 +54,6 @@ public class HomeAdminFragment extends Fragment {
         // Gán FoodAdapter cho ListView
         lvFoodAdmin.setAdapter(foodAdapter);
 
-        // Các xử lý logic của fragment home_admin.xml ở đây
-
         btnAddFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,9 +78,9 @@ public class HomeAdminFragment extends Fragment {
             @Override
             public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
                 if (error == null) {
-                    Toast.makeText(getContext(), "Food added successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Thêm món ăn thành công", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getContext(), "Failed to add food", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Có lỗi xảy ra", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -117,21 +115,23 @@ public class HomeAdminFragment extends Fragment {
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             foodList.clear();
             getListFoodsFromRealtimeDatabase();
-            Toast.makeText(getContext(), "Edit Food successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Chỉnh sửa món thành công", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void addListFoodDefault() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("list_foods");
-        foodList.add(new Food("Cơm sườn bì chả ", 30000, R.drawable.com_tam));
-        foodList.add(new Food("Cơm sườn", 30000, R.drawable.com_suon));
-        foodList.add(new Food("Cơm gà", 30000, R.drawable.com_ga));
-        foodList.add(new Food("Cơm cá mú", 30000, R.drawable.com_ca_mu));
-        foodList.add(new Food("Cơm gà xối mỡ", 50000, R.drawable.com_ga_xoi_mo));
-        foodList.add(new Food("Bún bò", 50000, R.drawable.bun_bo));
-        foodList.add(new Food("Bún riêu", 50000, R.drawable.bun_rieu));
-        foodList.add(new Food("Phở", 50000, R.drawable.pho));
+        foodList.add(new Food("Cơm tấm", 30000, R.drawable.food_com_tam));
+        foodList.add(new Food("Cơm gà", 35000, R.drawable.food_com_ga));
+        foodList.add(new Food("Bún bò", 45000, R.drawable.food_bun_bo));
+        foodList.add(new Food("Phở", 45000, R.drawable.food_pho));
+        foodList.add(new Food("Bánh canh", 45000, R.drawable.food_banh_canh));
+        foodList.add(new Food("Mì xào", 35000, R.drawable.food_mi_xao));
+        foodList.add(new Food("Miếng trộn", 35000, R.drawable.food_mieng_tron));
+        foodList.add(new Food("Cơm chiên", 40000, R.drawable.food_com_chien));
+        foodList.add(new Food("Chả giò", 25000, R.drawable.food_cha_gio));
+        foodList.add(new Food("Khoai tây chiên", 25000, R.drawable.food_khoai_tay_chien));
         myRef.setValue(foodList);
     }
 }

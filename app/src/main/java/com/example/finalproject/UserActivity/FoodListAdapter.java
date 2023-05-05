@@ -61,7 +61,6 @@ public class FoodListAdapter extends ArrayAdapter<Food> {
 
         ivFoodImage.setImageResource(food.getImage());
         tvFoodName.setText(food.getName());
-//        tvFoodPrice.setText(String.valueOf(food.getPrice()));
         tvQuantity.setText(String.valueOf(food.getQuantity()));
 
         //set listeners
@@ -110,7 +109,7 @@ public class FoodListAdapter extends ArrayAdapter<Food> {
                 myCartsRef.setValue(cart, new DatabaseReference.CompletionListener() {
                     @Override
                     public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                        Toast.makeText(getContext(), "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Đã thêm món ăn vào giỏ hàng", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
